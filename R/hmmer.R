@@ -23,6 +23,8 @@ hmmer <- R6::R6Class("hmmer",
       "Initializes docker image"
       cmd <- paste("docker pull", image)
       system(cmd)
+
+      self$image <- image
       self$homedir <- dir
       self$voldir <- paste0(self$homedir, ":", "/home/biodev")
     },
