@@ -20,7 +20,6 @@ hmmer <- R6::R6Class("hmmer",
     voldir = NULL,
     dockerbin = "docker",
     initialize = function(image = self$image, dir = getwd()) {
-      "Initializes docker image"
       cmd <- paste("docker pull", image)
       system(cmd)
 
@@ -29,7 +28,6 @@ hmmer <- R6::R6Class("hmmer",
       self$voldir <- paste0(self$homedir, ":", "/home/biodev")
     },
     hmmsearch = function(hmmfile = NULL, seqdb = NULL, args = "", outfile = "out.txt", logfile = "log.txt") {
-      "Runs hmmsearch"
       cmd <- paste(self$dockerbin, "run", "-v", self$voldir, self$image, "hmmsearch", "--tblout", outfile, args, hmmfile, seqdb, "2>&1 | tee", logfile)
       system(cmd)
     }
