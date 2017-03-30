@@ -21,9 +21,9 @@ hmmer <- R6::R6Class("hmmer",
       cmd <- paste("docker pull", image)
       system(cmd)
     },
-    hmmsearch = function(hmmfile = NULL, seqdb = NULL, args = "") {
+    hmmsearch = function(hmmfile = NULL, seqdb = NULL, args = "", outfile = "out.txt", logfile = "log.txt") {
       "Runs hmmsearch"
-      cmd <- paste("docker run", self$image, "hmmsearch", args, hmmfile, seqdb)
+      cmd <- paste(self$dockerbin, "run", self$image, "hmmsearch", "--tblout", outfile, args, hmmfile, seqdb, "2>&1 | tee", logfile)
       system(cmd)
     }
   ))
