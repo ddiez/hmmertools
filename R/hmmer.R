@@ -42,5 +42,10 @@ hmmer <- R6::R6Class("hmmer",
     hmmbuild = function(hmmfile = NULL, msafile = NULL, args = "") {
       cmd <- paste(self$dockerbin, "run", "-v", self$voldir, self$image, "hmmbuild", args, hmmfile, msafile)
       system(cmd)
+    },
+
+    hmmscan = function(hmmdb = NULL, seqfile = NULL, args = "") {
+      cmd <- paste(self$dockerbin, "run", "-v", self$voldir, self$image, "hmmscan", args, hmmdb, seqfile)
+      system(cmd)
     }
   ))
