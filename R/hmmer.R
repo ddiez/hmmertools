@@ -29,8 +29,9 @@ hmmer <- R6::R6Class("hmmer",
       self$voldir <- paste0(self$homedir, ":", "/home/biodev")
     },
 
-    hmmsearch = function(hmmfile = NULL, seqdb = NULL, args = "", outfile = "out.txt", logfile = "log.txt") {
-      cmd <- paste(self$dockerbin, "run", "-v", self$voldir, self$image, "hmmsearch", "--tblout", outfile, args, hmmfile, seqdb, "2>&1 | tee", logfile)
+    hmmsearch = function(hmmfile = NULL, seqdb = NULL, args = NULL, outfile = "out.txt", logfile = "/dev/null") {
+      args <- paste("--tblout", outfile, args)
+      cmd <- paste(self$dockerbin, "run", "-v", self$voldir, self$image, "hmmsearch", args, hmmfile, seqdb, "1>", logfile)
       system(cmd)
     },
 
