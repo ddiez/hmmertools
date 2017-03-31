@@ -24,10 +24,13 @@ library(hmmertools)
 hmmertools enables to run hmmer from R using a docker image.
 
 ```{r}
-seq <- system.file("inst", "files", "uniprot.fasta", package = "hmmertools")
-hmm <- system.file("inst", "files", "Ras.hmm", package = "hmmertools")
+# seq <- system.file("files", "uniprot.fasta", package = "hmmertools")
+# hmm <- system.file("files", "Ras.hmm", package = "hmmertools")
 
 h <- hmmertools::hmmer$new()
-h$hmmsearch(args = "-h")
+h$hmmsearch(hmmfile = "Ras.hmm", seqdb = "uniprot.fasta", outfile = "out.txt")
+```
+```{r}
+read.table("out.txt")
 ```
 

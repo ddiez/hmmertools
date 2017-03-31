@@ -1,0 +1,18 @@
+#                                                                         --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                  accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#          ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+tr|B5X1B6|B5X1B6_SALSA         -          Ras                  PF00071.21   1.7e-62  198.3   0.0   1.9e-62  198.1   0.0   1.0   1   0   0   1   1   1   1 GTPase HRas OS=Salmo salar GN=RASH PE=2 SV=1
+tr|E3TBX9|E3TBX9_ICTFU         -          Ras                  PF00071.21   4.7e-62  196.8   0.0   5.5e-62  196.6   0.0   1.0   1   0   0   1   1   1   1 GTPase hras OS=Ictalurus furcatus GN=RASH PE=2 SV=1
+tr|E3TE95|E3TE95_ICTPU         -          Ras                  PF00071.21     7e-61  193.0   0.0   8.1e-61  192.8   0.0   1.0   1   0   0   1   1   1   1 GTPase hras OS=Ictalurus punctatus GN=RASH PE=2 SV=1
+tr|C1BJX7|C1BJX7_OSMMO         -          Ras                  PF00071.21   2.2e-60  191.4   0.0   2.6e-60  191.2   0.0   1.0   1   0   0   1   1   1   1 GTPase HRas OS=Osmerus mordax GN=RASH PE=2 SV=1
+tr|A0A0S7HIV4|A0A0S7HIV4_9TELE -          Ras                  PF00071.21   9.7e-40  124.3   0.0   1.1e-39  124.0   0.0   1.0   1   0   0   1   1   1   1 RASH (Fragment) OS=Poeciliopsis prolifica GN=RASH PE=4 SV=1
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      Ras.hmm
+# Target file:     uniprot.fasta
+# Option settings: hmmsearch --tblout out.txt Ras.hmm uniprot.fasta 
+# Current dir:     /home/biodev
+# Date:            Fri Mar 31 08:44:09 2017
+# [ok]
