@@ -1,0 +1,33 @@
+---
+title: "Introduction to hmmertools"
+author: "Diego Diez"
+date: "`r BiocStyle::doc_date()`"
+package: "`r BiocStyle::pkg_ver('hmmertools')`"
+output:
+    rmarkdown::html_document
+abstract: >
+  Introduction to the hmmertools package.
+vignette: >
+ %\VignetteIndexEntry{Introduction to hmmertools}
+ %\VignetteEngine{knitr::rmarkdown}
+ %\VignetteEncoding{UTF-8}
+---
+
+
+```{r setup, include=FALSE}
+library(BiocStyle)
+library(hmmertools)
+```
+
+# Introduction
+
+hmmertools enables to run hmmer from R using a docker image.
+
+```{r}
+seq <- system.file("inst", "files", "uniprot.fasta", package = "hmmertools")
+hmm <- system.file("inst", "files", "Ras.hmm", package = "hmmertools")
+
+h <- hmmertools::hmmer$new()
+h$hmmsearch(args = "-h")
+```
+
