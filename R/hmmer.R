@@ -2,15 +2,6 @@
 #'
 #' Initializes a HMMER docker image and calls specific methods
 #'
-#' @usage
-#' hmmer$new()
-#'
-#' @examples
-#' h <- hmmer$new()
-#' h$image
-#' h$outdir
-#' h$hmmsearch("model.hmm", "sequences.fa")
-#'
 #' @export
 hmmer <- R6::R6Class("hmmer",
   inherit = biodev,

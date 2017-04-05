@@ -6,16 +6,9 @@
 \title{Initialize a HMMER docker image}
 \format{An object of class \code{R6ClassGenerator} of length 24.}
 \usage{
-hmmer$new()
+hmmer
 }
 \description{
 Initializes a HMMER docker image and calls specific methods
-}
-\examples{
-h <- hmmer$new()
-h$image
-h$outdir
-h$hmmsearch("model.hmm", "sequences.fa")
-
 }
 \keyword{datasets}
