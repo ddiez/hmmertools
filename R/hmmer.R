@@ -13,20 +13,16 @@
 #'
 #' @export
 hmmer <- R6::R6Class("hmmer",
+  inherit = biodev,
   public = list(
     image = "ddiez/hmmer",
-    outdir = ".",
-    homedir = NULL,
-    voldir = NULL,
-    dockerbin = "docker",
 
-    initialize = function(image = self$image, dir = getwd()) {
-      cmd <- paste("docker pull", image)
-      system(cmd)
-
+    initialize = function(image = self$image, ...) {
+      super$initialize(...)
       self$image <- image
-      self$homedir <- dir
-      self$voldir <- paste0(self$homedir, ":", "/home/biodev")
+
+      cmd <- paste("docker pull", self$image)
+      system(cmd)
     },
 
     hmmsearch = function(hmmfile = NULL, seqdb = NULL, args = NULL, outfile = "out.txt", logfile = "/dev/null") {
