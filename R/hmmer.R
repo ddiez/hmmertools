@@ -4,7 +4,7 @@
 #'
 #' @export
 hmmer <- R6::R6Class("hmmer",
-  inherit = biodev,
+  inherit = biodevtools::biodev,
   public = list(
     image = "ddiez/hmmer",
 
