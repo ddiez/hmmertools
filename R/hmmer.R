@@ -23,9 +23,8 @@ hmmer <- R6::R6Class("hmmer",
     },
 
     hmmsearch = function(hmmfile = NULL, seqdb = NULL, args = NULL, outfile = "out.txt", logfile = "/dev/null") {
-      args <- paste("--tblout", outfile, args)
-      cmd <- paste(self$dockerbin, "run", "-v", self$voldir, self$image, "hmmsearch", args, hmmfile, seqdb, "1>", logfile)
-      system(cmd)
+      args <- paste("run", "-v", self$voldir, self$image, "hmmsearch", "--tblout", outfile, args, hmmfile, seqdb)
+      out <- system2(self$dockerbin, args, stdout = TRUE)
     },
 
     hmmalign = function(hmmfile = NULL, seqfile = NULL, args = "") {
