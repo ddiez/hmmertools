@@ -12,7 +12,7 @@ hmmer <- R6::R6Class("hmmer",
       super$initialize(...)
       self$image <- image
 
-      cmd <- paste("docker pull", self$image)
+      cmd <- paste(self$dockerbin, "pull", self$image)
       system(cmd)
     },
 
