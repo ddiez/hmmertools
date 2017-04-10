@@ -12,8 +12,14 @@ hmmer <- R6::R6Class("hmmer",
       super$initialize(...)
       self$image <- image
 
-      cmd <- paste(self$dockerbin, "pull", self$image)
-      system(cmd)
+      args <- paste("pull", self$image)
+      system2(self$dockerbin, args)
+
+      # In some GUI stdout may not be printed. This could be better alternative:
+      # (and print based on biodev:verbose = TRUE)
+      #args <- paste("pull", self$image)
+      #out <- system2(self$dockerbin, args, stdout = TRUE)
+      #cat(paste(out, collapse = "\n"))
     },
 
     hmmsearch = function(hmmfile = NULL, seqdb = NULL, args = NULL, outfile = "out.txt", logfile = "/dev/null") {
