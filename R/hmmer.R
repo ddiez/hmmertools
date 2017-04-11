@@ -14,38 +14,57 @@ hmmer <- R6::R6Class("hmmer",
 
       args <- paste("pull", self$image)
       system2(self$dockerbin, args)
-
-      # In some GUI stdout may not be printed. This could be better alternative:
-      # (and print based on biodev:verbose = TRUE)
-      #args <- paste("pull", self$image)
-      #out <- system2(self$dockerbin, args, stdout = TRUE)
-      #cat(paste(out, collapse = "\n"))
     },
 
-    hmmsearch = function(hmmfile = NULL, seqdb = NULL, args = NULL, outfile = "out.txt", logfile = "/dev/null") {
-      args <- paste("run", "-v", self$voldir, self$image, "hmmsearch", "--tblout", outfile, args, hmmfile, seqdb)
-      out <- system2(self$dockerbin, args, stdout = TRUE)
+    hmmsearch = function(hmmfile = NULL, seqdb = NULL, args = "", outfile = "out.txt", help = FALSE) {
+      if (help || grepl("-h", args)) {
+        args <- paste("run", self$image, "hmmsearch", "-h")
+        system2(self$dockerbin, args)
+      } else {
+        if (is.null(hmmfile)) stop("hmmfile is required.")
+        if (is.null(seqdb)) stop("seqdb is required.")
 
-      status <- attributes(out)$status
-      out <- paste(out, collapse = "\n")
-      if (!is.null(status) && status == 1)
-        cat(out)
-      else
-        cat(out, file = logfile)
+        args <- paste("run", "-v", self$voldir, self$image, "hmmsearch", "--tblout", outfile, args, hmmfile, seqdb)
+        system2(self$dockerbin, args, stdout = FALSE)
+      }
     },
 
-    hmmalign = function(hmmfile = NULL, seqfile = NULL, args = "") {
-      cmd <- paste(self$dockerbin, "run", "-v", self$voldir, self$image, "hmmalign", args, hmmfile, seqfile)
-      system(cmd)
+    hmmalign = function(hmmfile = NULL, seqfile = NULL, args = "", outfile = "out.txt", help = FALSE) {
+      if (help || grepl("-h", args)) {
+        args <- paste("run", self$image, "hmmalign", "-h")
+        system2(self$dockerbin, args)
+      } else {
+        if (is.null(hmmfile)) stop("hmmfile is required.")
+        if (is.null(seqfile)) stop("seqfile is required.")
+
+        args <- paste("run", "-v", self$voldir, self$image, "hmmalign", args, hmmfile, seqfile)
+        system2(self$dockerbin, args, stdout = outfile) # this approach overwrites with blank outfile if it fails (e.g. when file not found).
+      }
     },
 
-    hmmbuild = function(hmmfile = NULL, msafile = NULL, args = "") {
-      cmd <- paste(self$dockerbin, "run", "-v", self$voldir, self$image, "hmmbuild", args, hmmfile, msafile)
-      system(cmd)
+    hmmbuild = function(hmmfile = NULL, msafile = NULL, args = "", help = FALSE) {
+      if (help || grepl("-h", args)) {
+        args <- paste("run", self$image, "hmmbuild", "-h")
+        system2(self$dockerbin, args)
+      } else {
+        if (is.null(hmmfile)) stop("hmmfile is required.")
+        if (is.null(msafile)) stop("msafile is required.")
+
+        args <- paste("run", "-v", self$voldir, self$image, "hmmbuild", args, hmmfile, msafile)
+        system2(self$dockerbin, args)
+      }
     },
 
-    hmmscan = function(hmmdb = NULL, seqfile = NULL, args = "") {
-      cmd <- paste(self$dockerbin, "run", "-v", self$voldir, self$image, "hmmscan", args, hmmdb, seqfile)
-      system(cmd)
+    hmmscan = function(hmmdb = NULL, seqfile = NULL, args = "", help = FALSE) {
+      if (help || grepl("-h", args)) {
+        args <- paste("run", self$image, "hmmscan", "-h")
+        system2(self$dockerbin, args)
+      } else {
+        if (is.null(hmmfile)) stop("hmmdb is required.")
+        if (is.null(msafile)) stop("seqfile is required.")
+
+        args <- paste("run", "-v", self$voldir, self$image, "hmmscan", args, hmmdb, seqfile)
+        system2(self$dockerbin, args)
+      }
     }
   ))
