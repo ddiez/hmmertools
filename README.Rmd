@@ -1,0 +1,12 @@
+---
+title: "hmmertools"
+output: github_document
+---
+
+## Installation
+
+You can install hmmertools from github with:
+
+```R
+devtools::install_github("ddiez/hmmertools")
+```
