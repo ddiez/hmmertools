@@ -4,7 +4,7 @@ Title: Run HMMER from R using Docker
 Version: 0.1.0
 Authors@R: person("Diego", "Diez", email = "diego10ruiz@gmail.com", role = c("aut", "cre"))
 Description: Run HMMER from R using Docker.
-Imports: biodevtools
+Imports: methods, biodevtools
 Remotes: ddiez/biodevtools
 License: MIT + file LICENSE
 Encoding: UTF-8

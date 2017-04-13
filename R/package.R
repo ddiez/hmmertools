@@ -5,5 +5,5 @@
 #' @name hmmertools
 #' @docType package
 #'
-#' @import biodevtools
+#' @import methods biodevtools
 NULL
