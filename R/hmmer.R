@@ -68,3 +68,36 @@ hmmer <- R6::R6Class("hmmer",
       }
     }
   ))
+
+#' BiodockerHub constructor.
+#'
+#' @export
+BiodockerHub <- function(...) {
+  hmmer$new(...)
+}
+
+setOldClass(c("Hmmer", "biodev", "R6"))
+
+#' show
+#'
+#' @export
+setMethod("show", "Hmmer", function(object)
+{
+  cat("class (show!):", class(object), "\n")
+
+}) # this does not seem to work.
+
+#' print
+#'
+#' @export
+setMethod("print", "Hmmer", function(x, ...)
+{
+  cat("class (print!):", class(x), "\n")
+
+}) # this does not seem to work.
+
+#' hmmsearch
+#'
+#' @export
+setGeneric("hmmsearch", function(object, ...) standardGeneric("hmmsearch"))
+setMethod("hmmsearch", "Hmmer", function(object, ...) object$hmmsearch(...))
