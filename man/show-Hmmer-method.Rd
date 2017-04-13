@@ -7,6 +7,9 @@
 \usage{
 \S4method{show}{Hmmer}(object)
 }
+\arguments{
+\item{object}{Hmmer object.}
+}
 \description{
 show
 }

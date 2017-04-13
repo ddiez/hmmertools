@@ -7,6 +7,11 @@
 \usage{
 \S4method{print}{Hmmer}(x, ...)
 }
+\arguments{
+\item{x}{Hmmer object.}
+
+\item{...}{further arguments (ignored).}
+}
 \description{
 print
 }

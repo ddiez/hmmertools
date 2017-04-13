@@ -71,6 +71,7 @@ hmmer <- R6::R6Class("hmmer",
 
 #' BiodockerHub constructor.
 #'
+#' @param ... arguments passed to constructor.
 #' @export
 BiodockerHub <- function(...) {
   hmmer$new(...)
@@ -79,6 +80,8 @@ BiodockerHub <- function(...) {
 setOldClass(c("Hmmer", "biodev", "R6"))
 
 #' show
+#'
+#' @param object Hmmer object.
 #'
 #' @export
 setMethod("show", "Hmmer", function(object)
@@ -89,6 +92,9 @@ setMethod("show", "Hmmer", function(object)
 
 #' print
 #'
+#' @param x Hmmer object.
+#' @param ... further arguments (ignored).
+#'
 #' @export
 setMethod("print", "Hmmer", function(x, ...)
 {
@@ -97,6 +103,9 @@ setMethod("print", "Hmmer", function(x, ...)
 }) # this does not seem to work.
 
 #' hmmsearch
+#'
+#' @param object Hmmer object.
+#' @param ... further arguments passed to hmmsearch().
 #'
 #' @export
 setGeneric("hmmsearch", function(object, ...) standardGeneric("hmmsearch"))

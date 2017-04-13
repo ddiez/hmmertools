@@ -6,6 +6,11 @@
 \usage{
 hmmsearch(object, ...)
 }
+\arguments{
+\item{object}{Hmmer object.}
+
+\item{...}{further arguments passed to hmmsearch().}
+}
 \description{
 hmmsearch
 }

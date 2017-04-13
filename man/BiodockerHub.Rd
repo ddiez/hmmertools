@@ -6,6 +6,9 @@
 \usage{
 BiodockerHub(...)
 }
+\arguments{
+\item{...}{arguments passed to constructor.}
+}
 \description{
 BiodockerHub constructor.
 }
