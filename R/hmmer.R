@@ -107,6 +107,8 @@ setMethod("print", "Hmmer", function(x, ...)
 #' @param object Hmmer object.
 #' @param ... further arguments passed to hmmsearch().
 #'
+#' @aliases hmmsearch,Hmmer-method
+#'
 #' @export
 setGeneric("hmmsearch", function(object, ...) standardGeneric("hmmsearch"))
 setMethod("hmmsearch", "Hmmer", function(object, ...) object$hmmsearch(...))

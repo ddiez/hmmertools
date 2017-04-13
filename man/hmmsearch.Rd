@@ -2,6 +2,7 @@
 % Please edit documentation in R/hmmer.R
 \name{hmmsearch}
 \alias{hmmsearch}
+\alias{hmmsearch,Hmmer-method}
 \title{hmmsearch}
 \usage{
 hmmsearch(object, ...)
