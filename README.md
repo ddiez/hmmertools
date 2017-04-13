@@ -1,6 +1,8 @@
 hmmertools
 ================
 
+[![Build Status](https://travis-ci.org/ddiez/hmmertools.svg?branch=master)](https://travis-ci.org/ddiez/hmmertools)
+
 Installation
 ------------
 
