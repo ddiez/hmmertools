@@ -24,7 +24,10 @@ hmmer <- R6::R6Class("hmmer",
         if (is.null(hmmfile)) stop("hmmfile is required.")
         if (is.null(seqdb)) stop("seqdb is required.")
 
-        args <- paste("run", "-v", self$voldir, self$image, "hmmsearch", "--tblout", outfile, args, hmmfile, seqdb)
+        hmmpath <- private$norm_path(hmmfile, bind.dir = "hmm")
+        seqpath <- private$norm_path(seqdb, bind.dir = "seq")
+
+        args <- paste("run", "-v", hmmpath$volume, "-v", seqpath$volume, "-v", self$voldir, self$image, "hmmsearch", "--tblout", outfile, args, hmmpath$file, seqpath$file)
         system2(self$dockerbin, args, stdout = FALSE)
       }
     },
