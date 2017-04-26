@@ -36,9 +36,11 @@ You can access methods help using `help = TRUE` or passing `args = "-h"` to HMME
 You can specify the output file. By default `hmmsearch` outputs tbl format.
 
 ```{r}
-seqdb <- system.file("files", "uniprot.fasta", package = "hmmertools")
-hmmfile <- system.file("files", "Ras.hmm", package = "hmmertools")
-h$hmmsearch(hmmfile = hmmfile, seqdb = seqdb, outfile = "out.txt")
+#seq <- system.file("files", "uniprot.fasta", package = "hmmertools")
+#hmm <- system.file("files", "Ras.hmm", package = "hmmertools")
+seq <- "uniprot.fasta"
+hmm <- "Ras.hmm"
+h$hmmsearch(hmmfile = hmm, seqdb = seq, outfile = "out.txt")
 read.table("out.txt")
 ```
 
