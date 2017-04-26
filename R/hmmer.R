@@ -63,6 +63,20 @@ hmmer <- R6::R6Class("hmmer",
       }
     },
 
+    hmmpress = function(hmmfile = NULL, args = "", help = FALSE) {
+      if (help || grepl("-h", args)) {
+        args <- paste("run", self$image, "hmmpress", "-h")
+        system2(self$dockerbin, args)
+      } else {
+        if (is.null(hmmfile)) stop("hmmfile is required.")
+
+        hmmpath <- private$norm_path(hmmfile, bind.dir = "hmm")
+
+        args <- paste("run", "-v", hmmpath$volume, "-v", self$voldir, self$image, "hmmpress", args, hmmpath$file)
+        system2(self$dockerbin, args)
+      }
+    },
+
     hmmscan = function(hmmdb = NULL, seqfile = NULL, args = "", outfile = "out.txt", help = FALSE) {
       if (help || grepl("-h", args)) {
         args <- paste("run", self$image, "hmmscan", "-h")
