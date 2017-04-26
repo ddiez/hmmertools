@@ -40,7 +40,10 @@ hmmer <- R6::R6Class("hmmer",
         if (is.null(hmmfile)) stop("hmmfile is required.")
         if (is.null(seqfile)) stop("seqfile is required.")
 
-        args <- paste("run", "-v", self$voldir, self$image, "hmmalign", args, hmmfile, seqfile)
+        hmmpath <- private$norm_path(hmmfile, bind.dir = "hmm")
+        seqpath <- private$norm_path(seqfile, bind.dir = "seq")
+
+        args <- paste("run", "-v", hmmpath$volume, "-v", seqpath$volume, "-v", self$voldir, self$image, "hmmalign", args, hmmpath$file, seqpath$file)
         system2(self$dockerbin, args, stdout = outfile) # this approach overwrites with blank outfile if it fails (e.g. when file not found).
       }
     },
@@ -53,7 +56,9 @@ hmmer <- R6::R6Class("hmmer",
         if (is.null(hmmfile)) stop("hmmfile is required.")
         if (is.null(msafile)) stop("msafile is required.")
 
-        args <- paste("run", "-v", self$voldir, self$image, "hmmbuild", args, hmmfile, msafile)
+        seqpath <- private$norm_path(msafile, bind.dir = "seq")
+
+        args <- paste("run", "-v", seqpath$volume, "-v", self$voldir, self$image, "hmmbuild", args, hmmfile, seqpath$file)
         system2(self$dockerbin, args)
       }
     },
@@ -66,7 +71,10 @@ hmmer <- R6::R6Class("hmmer",
         if (is.null(hmmdb)) stop("hmmdb is required.")
         if (is.null(seqfile)) stop("seqfile is required.")
 
-        args <- paste("run", "-v", self$voldir, self$image, "hmmscan", args, hmmdb, seqfile)
+        hmmpath <- private$norm_path(hmmdb, bind.dir = "hmm")
+        seqpath <- private$norm_path(seqfile, bind.dir = "seq")
+
+        args <- paste("run", "-v", hmmpath$volume, "-v", seqpath$volume, "-v", self$voldir, self$image, "hmmscan", args, hmmpath$file, seqpath$file)
         system2(self$dockerbin, args)
       }
     }
