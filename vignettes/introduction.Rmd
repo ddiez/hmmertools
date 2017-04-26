@@ -44,3 +44,27 @@ h$hmmsearch(hmmfile = hmm, seqdb = seq, outfile = "out.txt")
 read.table("out.txt")
 ```
 
+Align a set of sequences using a HMM profile:
+
+```{r}
+h$hmmalign(hmmfile = hmm, seqfile = seq, outfile = "align.txt")
+scan("align.txt", what = "", sep = "\n")
+```
+
+Build a HMM profile from an alignment.
+```{r}
+h$hmmbuild(hmmfile = "hmm.txt", msafile = "align.txt")
+scan("hmm.txt", what = "", sep = "\n")
+```
+
+Index a database of HMM profiles.
+
+```{r}
+h$hmmpress(hmmfile = "hmm.txt")
+```
+
+Scan a set of sequences for hits from an (indexed) HMM profile database.
+```{r}
+h$hmmscan(hmmdb = "hmm.txt", seqfile = seq, outfile = "scan.txt")
+scan("scan.txt", what = "", sep = "\n")
+```
