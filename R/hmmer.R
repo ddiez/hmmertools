@@ -63,7 +63,7 @@ hmmer <- R6::R6Class("hmmer",
       }
     },
 
-    hmmscan = function(hmmdb = NULL, seqfile = NULL, args = "", help = FALSE) {
+    hmmscan = function(hmmdb = NULL, seqfile = NULL, args = "", outfile = "out.txt", help = FALSE) {
       if (help || grepl("-h", args)) {
         args <- paste("run", self$image, "hmmscan", "-h")
         system2(self$dockerbin, args)
@@ -75,7 +75,7 @@ hmmer <- R6::R6Class("hmmer",
         seqpath <- private$norm_path(seqfile, bind.dir = "seq")
 
         args <- paste("run", "-v", hmmpath$volume, "-v", seqpath$volume, "-v", self$voldir, self$image, "hmmscan", args, hmmpath$file, seqpath$file)
-        system2(self$dockerbin, args)
+        system2(self$dockerbin, args, stdout = outfile)
       }
     }
   ))
