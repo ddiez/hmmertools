@@ -63,8 +63,8 @@ hmmer <- R6::R6Class("hmmer",
         args <- paste("run", self$image, "hmmscan", "-h")
         system2(self$dockerbin, args)
       } else {
-        if (is.null(hmmfile)) stop("hmmdb is required.")
-        if (is.null(msafile)) stop("seqfile is required.")
+        if (is.null(hmmdb)) stop("hmmdb is required.")
+        if (is.null(seqfile)) stop("seqfile is required.")
 
         args <- paste("run", "-v", self$voldir, self$image, "hmmscan", args, hmmdb, seqfile)
         system2(self$dockerbin, args)
