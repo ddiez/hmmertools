@@ -1,0 +1,254 @@
+# hmmscan :: search sequence(s) against a profile database
+# HMMER 3.1b2 (February 2015); http://hmmer.org/
+# Copyright (C) 2015 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query sequence file:             /tmp/seq/uniprot.fasta
+# target HMM database:             /tmp/hmm/hmm.txt
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       tr|E3TE95|E3TE95_ICTPU  [L=189]
+Description: GTPase hras OS=Ictalurus punctatus GN=RASH PE=2 SV=1
+Scores for complete sequence (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Model    Description
+    ------- ------ -----    ------- ------ -----   ---- --  -------- -----------
+   5.5e-136  435.9   0.7   6.1e-136  435.7   0.7    1.0  1  align     
+
+
+Domain annotation for each model (and alignments):
+>> align  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  435.7   0.7  6.1e-136  6.1e-136       1     189 []       1     189 []       1     189 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 435.7 bits;  conditional E-value: 6.1e-136
+                             ....xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx RF
+                   align   1 mteyklvvvgaggvgksaltiqliqnhfvdeydptiedsyrkqvvidgetclldildtagqeeysamrdqymrtgegflcvfainnt 87 
+                             mteyklvvvgaggvgksaltiqliqnhfvdeydptiedsyrkqvvidgetclldildtagqeeysamrdqymrtgegflcvfainnt
+  tr|E3TE95|E3TE95_ICTPU   1 MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNT 87 
+                             9************************************************************************************** PP
+
+                             xxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.......... RF
+                   align  88 ksfedihqyreqikrvkdsddvpmvlvgnkcdlpartvdtrqaqelarsygipyietsaktrqgvedafytlvreirqhklrklnpp 174
+                             ksfedihqyreqikrvkdsddvpmvlvgnkcdlpart+dtrqa+elarsygipyietsaktrqgvedafytlvreirqhklrklnpp
+  tr|E3TE95|E3TE95_ICTPU  88 KSFEDIHQYREQIKRVKDSDDVPMVLVGNKCDLPARTADTRQAHELARSYGIPYIETSAKTRQGVEDAFYTLVREIRQHKLRKLNPP 174
+                             *************************************************************************************** PP
+
+                             ............... RF
+                   align 175 desgqdcmscrlvvs 189
+                             desgqdcmscr+vvs
+  tr|E3TE95|E3TE95_ICTPU 175 DESGQDCMSCRCVVS 189
+                             *************97 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query sequence(s):                         1  (189 residues searched)
+Target model(s):                           1  (189 nodes)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.00u 0.01s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 3.57
+//
+Query:       tr|E3TBX9|E3TBX9_ICTFU  [L=189]
+Description: GTPase hras OS=Ictalurus furcatus GN=RASH PE=2 SV=1
+Scores for complete sequence (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Model    Description
+    ------- ------ -----    ------- ------ -----   ---- --  -------- -----------
+     2e-136  437.3   0.8   2.2e-136  437.2   0.8    1.0  1  align     
+
+
+Domain annotation for each model (and alignments):
+>> align  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  437.2   0.8  2.2e-136  2.2e-136       1     189 []       1     189 []       1     189 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 437.2 bits;  conditional E-value: 2.2e-136
+                             ....xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx RF
+                   align   1 mteyklvvvgaggvgksaltiqliqnhfvdeydptiedsyrkqvvidgetclldildtagqeeysamrdqymrtgegflcvfainnt 87 
+                             mteyklvvvgaggvgksaltiqliqnhfvdeydptiedsyrkqvvidgetclldildtagqeeysamrdqymrtgegflcvfainnt
+  tr|E3TBX9|E3TBX9_ICTFU   1 MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNT 87 
+                             9************************************************************************************** PP
+
+                             xxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.......... RF
+                   align  88 ksfedihqyreqikrvkdsddvpmvlvgnkcdlpartvdtrqaqelarsygipyietsaktrqgvedafytlvreirqhklrklnpp 174
+                             ksfedihqyreqikrvkdsddvpmvlvgnkcdlpartvdtrqa+elarsygipyietsaktrqgvedafytlvreirqhklrklnpp
+  tr|E3TBX9|E3TBX9_ICTFU  88 KSFEDIHQYREQIKRVKDSDDVPMVLVGNKCDLPARTVDTRQAHELARSYGIPYIETSAKTRQGVEDAFYTLVREIRQHKLRKLNPP 174
+                             *************************************************************************************** PP
+
+                             ............... RF
+                   align 175 desgqdcmscrlvvs 189
+                             desgqdcmscr+vvs
+  tr|E3TBX9|E3TBX9_ICTFU 175 DESGQDCMSCRCVVS 189
+                             *************97 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query sequence(s):                         1  (189 residues searched)
+Target model(s):                           1  (189 nodes)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.00u 0.00s 00:00:00.00 Elapsed: 00:00:00.01
+# Mc/sec: 3.57
+//
+Query:       tr|B5X1B6|B5X1B6_SALSA  [L=189]
+Description: GTPase HRas OS=Salmo salar GN=RASH PE=2 SV=1
+Scores for complete sequence (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Model    Description
+    ------- ------ -----    ------- ------ -----   ---- --  -------- -----------
+   2.1e-136  437.2   0.9   2.4e-136  437.1   0.9    1.0  1  align     
+
+
+Domain annotation for each model (and alignments):
+>> align  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  437.1   0.9  2.4e-136  2.4e-136       1     189 []       1     189 []       1     189 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 437.1 bits;  conditional E-value: 2.4e-136
+                             ....xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx RF
+                   align   1 mteyklvvvgaggvgksaltiqliqnhfvdeydptiedsyrkqvvidgetclldildtagqeeysamrdqymrtgegflcvfainnt 87 
+                             mteyklvvvgaggvgksaltiqliqnhfvdeydptiedsyrkqvvidgetclldildtagqeeysamrdqymrtgegflcvfainnt
+  tr|B5X1B6|B5X1B6_SALSA   1 MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNT 87 
+                             9************************************************************************************** PP
+
+                             xxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.......... RF
+                   align  88 ksfedihqyreqikrvkdsddvpmvlvgnkcdlpartvdtrqaqelarsygipyietsaktrqgvedafytlvreirqhklrklnpp 174
+                             ksfedihqyreqikrvkdsddvpmvlvgnkcdlp+rtvdtrqaqelarsygipyietsaktrqgvedafytlvreirqhklrklnpp
+  tr|B5X1B6|B5X1B6_SALSA  88 KSFEDIHQYREQIKRVKDSDDVPMVLVGNKCDLPSRTVDTRQAQELARSYGIPYIETSAKTRQGVEDAFYTLVREIRQHKLRKLNPP 174
+                             *************************************************************************************** PP
+
+                             ............... RF
+                   align 175 desgqdcmscrlvvs 189
+                             desgqdcmscr+vvs
+  tr|B5X1B6|B5X1B6_SALSA 175 DESGQDCMSCRCVVS 189
+                             *************97 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query sequence(s):                         1  (189 residues searched)
+Target model(s):                           1  (189 nodes)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00.01
+# Mc/sec: 3.57
+//
+Query:       tr|A0A0S7HIV4|A0A0S7HIV4_9TELE  [L=132]
+Description: RASH (Fragment) OS=Poeciliopsis prolifica GN=RASH PE=4 SV=1
+Scores for complete sequence (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Model    Description
+    ------- ------ -----    ------- ------ -----   ---- --  -------- -----------
+    1.9e-94  300.4   0.5    2.1e-94  300.3   0.5    1.0  1  align     
+
+
+Domain annotation for each model (and alignments):
+>> align  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  300.3   0.5   2.1e-94   2.1e-94      58     189 .]       1     132 []       1     132 [] 1.00
+
+  Alignments for each domain:
+  == domain 1  score: 300.3 bits;  conditional E-value: 2.1e-94
+                                     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx RF
+                           align  58 tagqeeysamrdqymrtgegflcvfainntksfedihqyreqikrvkdsddvpmvlvgnkcdlpartvdtrqaqelars 136
+                                     tagqeeysamrdqymrtgegflcvfainntksfedihqyreqikrvkdsddvpmvlvgnkcdlpartvdtrqaqelars
+  tr|A0A0S7HIV4|A0A0S7HIV4_9TELE   1 TAGQEEYSAMRDQYMRTGEGFLCVFAINNTKSFEDIHQYREQIKRVKDSDDVPMVLVGNKCDLPARTVDTRQAQELARS 79 
+                                     8****************************************************************************** PP
+
+                                     xxxxxxxxxxxxxxxxxxxxxxxxxxxx......................... RF
+                           align 137 ygipyietsaktrqgvedafytlvreirqhklrklnppdesgqdcmscrlvvs 189
+                                     ygipyietsaktrqgvedafytlvreirqhklrklnppdesgqdcmscr+vvs
+  tr|A0A0S7HIV4|A0A0S7HIV4_9TELE  80 YGIPYIETSAKTRQGVEDAFYTLVREIRQHKLRKLNPPDESGQDCMSCRCVVS 132
+                                     ***************************************************97 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query sequence(s):                         1  (132 residues searched)
+Target model(s):                           1  (189 nodes)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.00u 0.00s 00:00:00.00 Elapsed: 00:00:00.01
+# Mc/sec: 2.49
+//
+Query:       tr|C1BJX7|C1BJX7_OSMMO  [L=187]
+Description: GTPase HRas OS=Osmerus mordax GN=RASH PE=2 SV=1
+Scores for complete sequence (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Model    Description
+    ------- ------ -----    ------- ------ -----   ---- --  -------- -----------
+   1.4e-123  395.4   0.8   1.5e-123  395.3   0.8    1.0  1  align     
+
+
+Domain annotation for each model (and alignments):
+>> align  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  395.3   0.8  1.5e-123  1.5e-123       1     187 [.       1     187 []       1     187 [] 0.99
+
+  Alignments for each domain:
+  == domain 1  score: 395.3 bits;  conditional E-value: 1.5e-123
+                             ....xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx RF
+                   align   1 mteyklvvvgaggvgksaltiqliqnhfvdeydptiedsyrkqvvidgetclldildtagqeeysamrdqymrtgegflcvfainnt 87 
+                             mteyklvvvgaggvgksaltiqliqnhfvdeydptiedsyrkqvvidgetclldildtagqeeysamrdqymrtgegflcvfainn+
+  tr|C1BJX7|C1BJX7_OSMMO   1 MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNS 87 
+                             9************************************************************************************** PP
+
+                             xxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.......... RF
+                   align  88 ksfedihqyreqikrvkdsddvpmvlvgnkcdlpartvdtrqaqelarsygipyietsaktrqgvedafytlvreirqhklrklnpp 174
+                             ksfed+h+yreqi+rvkdsd+vpmvlvgnk+dl++r+v++rqaqelar++g+p++etsaktrqgve+afy+lvreir++k+++++++
+  tr|C1BJX7|C1BJX7_OSMMO  88 KSFEDVHLYREQINRVKDSDSVPMVLVGNKSDLGSRSVESRQAQELARGLGVPFVETSAKTRQGVEEAFYSLVREIRRYKETNRSNK 174
+                             *************************************************************************************** PP
+
+                             ............. RF
+                   align 175 desgqdcmscrlv 187
+                             +++++++++c+l+
+  tr|C1BJX7|C1BJX7_OSMMO 175 KSKKSTQRRCTLL 187
+                             **********975 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query sequence(s):                         1  (187 residues searched)
+Target model(s):                           1  (189 nodes)
+Passed MSV filter:                         1  (1); expected 0.0 (0.02)
+Passed bias filter:                        1  (1); expected 0.0 (0.02)
+Passed Vit filter:                         1  (1); expected 0.0 (0.001)
+Passed Fwd filter:                         1  (1); expected 0.0 (1e-05)
+Initial search space (Z):                  1  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.00u 0.00s 00:00:00.00 Elapsed: 00:00:00.02
+# Mc/sec: 1.77
+//
+[ok]

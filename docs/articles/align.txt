@@ -1,0 +1,21 @@
+# STOCKHOLM 1.0
+
+#=GS tr|E3TE95|E3TE95_ICTPU         DE GTPase hras OS=Ictalurus punctatus GN=RASH PE=2 SV=1
+#=GS tr|E3TBX9|E3TBX9_ICTFU         DE GTPase hras OS=Ictalurus furcatus GN=RASH PE=2 SV=1
+#=GS tr|B5X1B6|B5X1B6_SALSA         DE GTPase HRas OS=Salmo salar GN=RASH PE=2 SV=1
+#=GS tr|A0A0S7HIV4|A0A0S7HIV4_9TELE DE RASH (Fragment) OS=Poeciliopsis prolifica GN=RASH PE=4 SV=1
+#=GS tr|C1BJX7|C1BJX7_OSMMO         DE GTPase HRas OS=Osmerus mordax GN=RASH PE=2 SV=1
+
+tr|E3TE95|E3TE95_ICTPU                 mteyKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTI-EDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNTKSFEDIHQYREQIKRVKDsDDVPMVLVGNKCDLPA-RTADTRQAHELARSYGIPYIETSAKTRQGVEDAFYTLVREIR-qhklrklnppdesgqdcmscrcvvs
+#=GR tr|E3TE95|E3TE95_ICTPU         PP ****99******************************.********************************************************************9999*************6.9**************************************997.6************************
+tr|E3TBX9|E3TBX9_ICTFU                 mteyKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTI-EDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNTKSFEDIHQYREQIKRVKDsDDVPMVLVGNKCDLPA-RTVDTRQAHELARSYGIPYIETSAKTRQGVEDAFYTLVREIR-qhklrklnppdesgqdcmscrcvvs
+#=GR tr|E3TBX9|E3TBX9_ICTFU         PP ****99******************************.********************************************************************9999*************6.***************************************997.6************************
+tr|B5X1B6|B5X1B6_SALSA                 mteyKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTI-EDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNTKSFEDIHQYREQIKRVKDsDDVPMVLVGNKCDLPS-RTVDTRQAQELARSYGIPYIETSAKTRQGVEDAFYTLVREIR-qhklrklnppdesgqdcmscrcvvs
+#=GR tr|B5X1B6|B5X1B6_SALSA         PP ****99******************************.********************************************************************9999*************6.***************************************997.6************************
+tr|A0A0S7HIV4|A0A0S7HIV4_9TELE         ....------------------------------------------------------TAGQEEYSAMRDQYMRTGEGFLCVFAINNTKSFEDIHQYREQIKRVKDsDDVPMVLVGNKCDLPA-RTVDTRQAQELARSYGIPYIETSAKTRQGVEDAFYTLVREIR-qhklrklnppdesgqdcmscrcvvs
+#=GR tr|A0A0S7HIV4|A0A0S7HIV4_9TELE PP ..........................................................9**********************************************9999*************6.***************************************997.6************************
+tr|C1BJX7|C1BJX7_OSMMO                 mteyKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTI-EDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNSKSFEDVHLYREQINRVKDsDSVPMVLVGNKSDLGS-RSVESRQAQELARGLGVPFVETSAKTRQGVEEAFYSLVREIR-ryketnrsnkkskkstqrrctll..
+#=GR tr|C1BJX7|C1BJX7_OSMMO         PP ****99******************************.********************************************************************9999*************6.***************************************996.7**********************..
+#=GC PP_cons                           ....99******************************.********************************************************************9.99*************6.***************************************996..........................
+#=GC RF                                ....xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.........................
+//
