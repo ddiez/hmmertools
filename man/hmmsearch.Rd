@@ -2,13 +2,13 @@
 % Please edit documentation in R/hmmer.R
 \name{hmmsearch}
 \alias{hmmsearch}
-\alias{hmmsearch,Hmmer-method}
+\alias{hmmsearch,hmmer-method}
 \title{hmmsearch}
 \usage{
 hmmsearch(object, ...)
 }
 \arguments{
-\item{object}{Hmmer object.}
+\item{object}{hmmer object.}
 
 \item{...}{further arguments passed to hmmsearch().}
 }

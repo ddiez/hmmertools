@@ -102,14 +102,14 @@ BiodockerHub <- function(...) {
   hmmer$new(...)
 }
 
-setOldClass(c("Hmmer", "biodev", "R6"))
+setOldClass(c("hmmer", "biodev", "R6"))
 
 #' show
 #'
-#' @param object Hmmer object.
+#' @param object hmmer object.
 #'
 #' @export
-setMethod("show", "Hmmer", function(object)
+setMethod("show", "hmmer", function(object)
 {
   cat("class (show!):", class(object), "\n")
 
@@ -117,11 +117,11 @@ setMethod("show", "Hmmer", function(object)
 
 #' print
 #'
-#' @param x Hmmer object.
+#' @param x hmmer object.
 #' @param ... further arguments (ignored).
 #'
 #' @export
-setMethod("print", "Hmmer", function(x, ...)
+setMethod("print", "hmmer", function(x, ...)
 {
   cat("class (print!):", class(x), "\n")
 
@@ -129,11 +129,11 @@ setMethod("print", "Hmmer", function(x, ...)
 
 #' hmmsearch
 #'
-#' @param object Hmmer object.
+#' @param object hmmer object.
 #' @param ... further arguments passed to hmmsearch().
 #'
-#' @aliases hmmsearch,Hmmer-method
+#' @aliases hmmsearch,hmmer-method
 #'
 #' @export
 setGeneric("hmmsearch", function(object, ...) standardGeneric("hmmsearch"))
-setMethod("hmmsearch", "Hmmer", function(object, ...) object$hmmsearch(...))
+setMethod("hmmsearch", "hmmer", function(object, ...) object$hmmsearch(...))
