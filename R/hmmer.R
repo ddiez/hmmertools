@@ -6,11 +6,8 @@
 hmmer <- R6::R6Class("hmmer",
   inherit = biodevtools::biodev,
   public = list(
-    image = "ddiez/hmmer",
-
-    initialize = function(image = self$image, ...) {
-      super$initialize(...)
-      self$image <- image
+    initialize = function(image = "ddiez/hmmer", ...) {
+      super$initialize(image = image, ...)
 
       args <- paste("pull", self$image)
       system2(self$dockerbin, args)
