@@ -9,13 +9,18 @@ hmmer <- R6::R6Class("hmmer",
     initialize = function(image = "ddiez/hmmer", ...) {
       super$initialize(image = image, ...)
 
+      # pull image.
       args <- paste("pull", self$image)
+      system2(self$dockerbin, args)
+
+      # run container.
+      args <- paste("run -ti -d --name", self$id, self$image, "/bin/bash")
       system2(self$dockerbin, args)
     },
 
     hmmsearch = function(hmmfile = NULL, seqdb = NULL, args = "", outfile = "out.txt", help = FALSE) {
       if (help || grepl("-h", args)) {
-        args <- paste("run", self$image, "hmmsearch", "-h")
+        args <- paste("exec", self$id, "hmmsearch", "-h")
         system2(self$dockerbin, args)
       } else {
         if (is.null(hmmfile)) stop("hmmfile is required.")
@@ -24,7 +29,7 @@ hmmer <- R6::R6Class("hmmer",
         hmmpath <- private$norm_path(hmmfile, bind.dir = "hmm")
         seqpath <- private$norm_path(seqdb, bind.dir = "seq")
 
-        args <- paste("run", "-v", hmmpath$volume, "-v", seqpath$volume, "-v", self$voldir, self$image, "hmmsearch", "--tblout", outfile, args, hmmpath$file, seqpath$file)
+        args <- paste("exec", "-v", hmmpath$volume, "-v", seqpath$volume, "-v", self$voldir, self$id, "hmmsearch", "--tblout", outfile, args, hmmpath$file, seqpath$file)
         system2(self$dockerbin, args, stdout = FALSE)
       }
     },
