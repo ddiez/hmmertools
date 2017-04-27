@@ -12,16 +12,13 @@ hmmer <- R6::R6Class("hmmer",
       # pull image.
       args <- paste("pull", self$image)
       system2(self$dockerbin, args)
-
-      # run container.
-      args <- paste("run -ti -d --name", self$id, self$image, "/bin/bash")
-      system2(self$dockerbin, args)
     },
 
     hmmsearch = function(hmmfile = NULL, seqdb = NULL, args = "", outfile = "out.txt", help = FALSE) {
       if (help || grepl("-h", args)) {
-        args <- paste("exec", self$id, "hmmsearch", "-h")
-        system2(self$dockerbin, args)
+        private$initialize_container()
+        private$run_container("hmmsearch", "-h", stdout = TRUE)
+        private$clean_container()
       } else {
         if (is.null(hmmfile)) stop("hmmfile is required.")
         if (is.null(seqdb)) stop("seqdb is required.")
@@ -29,8 +26,13 @@ hmmer <- R6::R6Class("hmmer",
         hmmpath <- private$norm_path(hmmfile, bind.dir = "hmm")
         seqpath <- private$norm_path(seqdb, bind.dir = "seq")
 
-        args <- paste("exec", "-v", hmmpath$volume, "-v", seqpath$volume, "-v", self$voldir, self$id, "hmmsearch", "--tblout", outfile, args, hmmpath$file, seqpath$file)
-        system2(self$dockerbin, args, stdout = FALSE)
+        args <- paste("-v", hmmpath$volume, "-v", seqpath$volume, "-v", self$voldir)
+        private$initialize_container(args)
+
+        args <- paste("--tblout", outfile, args, hmmpath$file, seqpath$file)
+        private$run_container("hmmsearch", args)
+
+        private$clear_container()
       }
     },
 
